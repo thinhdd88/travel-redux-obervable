@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "destinations.css",
+	"sources": [
+		"destinations.scss",
+		"../../../../assets/styles/_var.scss"
+	],
+	"names": [],
+	"mappings": "AAGA,AAAA,qBAAqB,CAAC;EACpB,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,IAAI,GACrB"
+}

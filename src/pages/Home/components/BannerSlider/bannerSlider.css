@@ -1,0 +1,23 @@
+.banner-slider img {
+  max-width: 100%; }
+
+.banner-slider picture {
+  display: block !important; }
+
+.banner-slider .slick-dots {
+  bottom: 30px; }
+
+.banner-slider .slick-dots li button {
+  width: 20px;
+  height: 20px; }
+  .banner-slider .slick-dots li button:before {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-size: 18px;
+    opacity: 1 !important; }
+
+.banner-slider .slick-dots li.slick-active button:before {
+  color: #f1a228; }
+
+/*# sourceMappingURL=bannerSlider.css.map */

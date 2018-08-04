@@ -1,0 +1,12 @@
+export const NAME = "destinationDetail";
+
+export const DESTINATION_REDUCER = [NAME, 'destinationReducer'];
+export const ATTRACTIONS_REDUCER = [NAME, 'attractionsReducer'];
+
+export const GET_DESTINATION = `${NAME}/GET_DESTINATION`;
+export const GET_DESTINATION_COMPLETE = `${NAME}/GET_DESTINATION_COMPLETE`;
+export const GET_DESTINATION_ERROR = `${NAME}/GET_DESTINATION_ERROR`;
+
+export const GET_ATTRACTIONS = `${NAME}/GET_ATTRACTIONS`;
+export const GET_ATTRACTIONS_COMPLETE = `${NAME}/GET_ATTRACTIONS_COMPLETE`;
+export const GET_ATTRACTIONS_ERROR = `${NAME}/GET_ATTRACTIONS_ERROR`;

@@ -1,0 +1,33 @@
+// Variables
+@import "assets/styles/var.scss";
+
+.banner-slider {
+  img {
+    max-width: 100%;
+  }
+
+  picture {
+    display:  block !important;
+  }
+
+  .slick-dots {
+    bottom: 30px;
+  }
+
+  .slick-dots li {
+    button{
+      width: 20px;
+      height: 20px;
+      &:before {
+        width: 20px;
+        height: 20px;
+        color: #fff;
+        font-size: 18px;
+        opacity: 1 !important;
+      }
+    }
+    &.slick-active button:before {
+      color: $color-main;
+    }
+  }
+}
