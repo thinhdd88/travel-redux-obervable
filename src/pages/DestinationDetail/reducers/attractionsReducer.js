@@ -1,5 +1,5 @@
-import { fromJS } from 'immutable';
-import * as actionTypes  from '../contants';
+import {fromJS} from 'immutable';
+import * as actionTypes from '../contants';
 
 const initState = {
     model: [],
@@ -18,7 +18,7 @@ export default function attractionsReducer(state = fromJS(initState), action) {
 
         case actionTypes.GET_ATTRACTIONS_COMPLETE: {
             return state.merge({
-                model: action.payload.detail || [] ,
+                model: action.payload.detail || [],
                 fetching: false,
             });
         }

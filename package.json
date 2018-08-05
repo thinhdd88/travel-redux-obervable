@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.0.0",
+    "config-override": "^1.0.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "history": "^4.7.2",
@@ -15,6 +16,8 @@
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-app-rewire-eslint": "^0.2.3",
+    "react-app-rewired": "^1.5.2",
     "react-dom": "^16.3.2",
     "react-google-maps": "^9.4.5",
     "react-immutable-proptypes": "^2.1.0",
@@ -38,11 +41,14 @@
   "scripts": {
     "build-css": "node-sass-chokidar --source-map true --include-path ./src --include-path ./node_modules src/ -o src/ --recursive",
     "watch-css": "npm run build-css && node-sass-chokidar --source-map true --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
+    "start-js": "react-app-rewired start",
     "start": "npm-run-all -p watch-css start-js",
-    "build-js": "react-scripts build",
+    "build-js": "react-app-rewired build",
     "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint-plugin-babel": "^5.1.0"
   }
 }

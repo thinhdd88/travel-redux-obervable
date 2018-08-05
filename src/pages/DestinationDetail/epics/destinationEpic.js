@@ -1,8 +1,8 @@
 import Rx from 'rxjs/Rx';
-import { combineEpics } from 'redux-observable';
-import { ajax } from 'rxjs/observable/dom/ajax';
-import {HOST}   from 'config';
-import * as actionTypes  from '../contants';
+import {combineEpics} from 'redux-observable';
+import {ajax} from 'rxjs/observable/dom/ajax';
+import {HOST} from 'config';
+import * as actionTypes from '../contants';
 import {getAttractions} from '../actions';
 
 const getDestinationDetail = action$ =>
@@ -25,7 +25,7 @@ const getDestinationDetail = action$ =>
                 ]))
                 .catch(error => Rx.Observable.of({
                     type: actionTypes.GET_DESTINATION_ERROR,
-                    payload: { error }
+                    payload: {error}
                 }))
         );
 

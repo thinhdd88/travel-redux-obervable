@@ -1,1 +1,1 @@
-export const HOST = "http://localhost/projects/vninfo-wp/wp-json/wp/v2"
+export const HOST = "http://localhost/projects/vninfo-wp/wp-json/wp/v2";

@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import Slider from "react-slick";
-import './bannerSlider.css'
+import './bannerSlider.css';
 
 const settings = {
     dots: true,
@@ -22,8 +22,8 @@ export class BannerSlider extends PureComponent {
                         banners.map((val, key) => {
                             return (
                                 <picture key={key}>
-                                    <source media="(min-width: 601px)" srcSet={val.lg} />
-                                    <img src={val.sm} alt="" />
+                                    <source media="(min-width: 601px)" srcSet={val.lg}/>
+                                    <img src={val.sm} alt=""/>
                                 </picture>
                             );
                         })
@@ -34,6 +34,6 @@ export class BannerSlider extends PureComponent {
     }
 }
 
-BannerSlider.propTypes  = {
+BannerSlider.propTypes = {
     items: ImmutablePropTypes.list,
-}
+};

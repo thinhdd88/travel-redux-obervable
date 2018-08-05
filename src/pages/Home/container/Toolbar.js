@@ -1,10 +1,10 @@
 import React from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import  * as actions from '../actions/toolbar'
-import { HOME_STATE_PATH } from '../contants';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from '../actions/toolbar';
+import {HOME_STATE_PATH} from '../contants';
 
 // Material UI
 import {orange400} from 'material-ui/styles/colors';
@@ -38,7 +38,9 @@ const Content = ({model, handleSearch, handleSort}) => {
                             <TextField
                                 hintText="Search..."
                                 value={model.get('searchString')}
-                                onChange={(event) => {handleSearch(event.target.value)}}
+                                onChange={(event) => {
+                                    handleSearch(event.target.value);
+                                }}
                                 underlineFocusStyle={styles.underlineStyle}
                             />
                         </div>
@@ -48,21 +50,23 @@ const Content = ({model, handleSearch, handleSort}) => {
                             <SelectField
                                 className="pull-right"
                                 value={model.get('sort')}
-                                onChange={(event, index, value) => {handleSort(value)}}
+                                onChange={(event, index, value) => {
+                                    handleSort(value);
+                                }}
                                 maxHeight={200}
                                 selectedMenuItemStyle={styles.color}
                             >
-                                <MenuItem value={0} primaryText="Popular" />
-                                <MenuItem value={1} primaryText="A->Z" />
-                                <MenuItem value={2} primaryText="Z->A" />
+                                <MenuItem value={0} primaryText="Popular"/>
+                                <MenuItem value={1} primaryText="A->Z"/>
+                                <MenuItem value={2} primaryText="Z->A"/>
                             </SelectField>
                         </div>
                     </div>
                 </div>
             </MuiThemeProvider>
         </div>
-    )
-}
+    );
+};
 
 const mapStateToProps = state => ({
     model: state.getIn(HOME_STATE_PATH),
@@ -75,10 +79,10 @@ const Toolbar = connect(
     mapDispatchToProps
 )(Content);
 
-Toolbar.propTypes  = {
+Toolbar.propTypes = {
     handleSort: PropTypes.func,
     handleSearch: PropTypes.func,
     model: ImmutablePropTypes.map,
-}
+};
 
 export default Toolbar;

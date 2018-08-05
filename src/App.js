@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import createHistory from 'history/createBrowserHistory'
-import { Router, Route, Switch  } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
+import {Router, Route, Switch} from 'react-router-dom';
 import Loadable from 'react-loadable';
 import {Map} from 'immutable';
 
 // Redux
-import { Provider } from 'react-redux';
-import { createStore, compose, applyMiddleware } from 'redux';
-import { createEpicMiddleware } from 'redux-observable';
-import { createLogger } from 'redux-logger'
+import {Provider} from 'react-redux';
+import {createStore, compose, applyMiddleware} from 'redux';
+import {createEpicMiddleware} from 'redux-observable';
+import {createLogger} from 'redux-logger';
 import rootReducer from './redux/reducers';
 import rootEpic from './redux/epics';
 
@@ -31,7 +31,7 @@ const DestinationDetail = Loadable({
 
 const history = createHistory();
 history.listen(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
 });
 
 // We use Immutable that why innit state is a Map not {}
@@ -44,7 +44,7 @@ const logger = createLogger({
         nextState: () => '#4CAF50',
     },
     stateTransformer: (state) => {
-        return state.toJS()
+        return state.toJS();
     }
 });
 
@@ -61,7 +61,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <Router history={history} >
+                <Router history={history}>
                     <React.Fragment>
                         <Header/>
                         <Switch>

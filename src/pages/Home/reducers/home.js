@@ -1,5 +1,5 @@
-import { fromJS } from 'immutable';
-import * as actionTypes  from '../contants';
+import {fromJS} from 'immutable';
+import * as actionTypes from '../contants';
 
 // TODO: sample data
 import banner1 from 'assets/images/banner/banner1.jpg';
@@ -17,11 +17,11 @@ const banners = [
     {
         lg: banner2,
         sm: banner2_sm
-    },{
+    }, {
         lg: banner3,
         sm: banner3_sm
     },
-]
+];
 
 const initState = fromJS({
     banners: [],

@@ -1,12 +1,12 @@
-import React from 'react'
-import { Loading } from 'components/common';
+import React from 'react';
+import {Loading} from 'components/common';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import Attractions from './Attractions';
 
 export const Destination = ({data, fetching, attractions}) => {
-    if(fetching) return <Loading />;
-    if(!data.size) return '';
+    if (fetching) return <Loading/>;
+    if (!data.size) return '';
 
     const {acf, title, content, metadata} = data.toJS();
     const geocoder = metadata.martygeocoderlatlng && metadata.martygeocoderlatlng[0].slice(1, -1).split(',');
@@ -17,8 +17,8 @@ export const Destination = ({data, fetching, attractions}) => {
 
     return (
         <div className="destination-detail">
-            <div style={{ backgroundImage: `url(${acf.main_image})` }} className="destination-banner">
-                <img src={acf.main_image} alt={title.redered} />
+            <div style={{backgroundImage: `url(${acf.main_image})`}} className="destination-banner">
+                <img src={acf.main_image} alt={title.redered}/>
                 <div className="destination-title">
                     <h1 className="container">{title.rendered}</h1>
                 </div>
@@ -28,22 +28,22 @@ export const Destination = ({data, fetching, attractions}) => {
                 <div className="row">
                     <div className="col-sm-9 pull-right">
                         <div className="description"
-                             dangerouslySetInnerHTML={ {__html: content.rendered} } />
+                            dangerouslySetInnerHTML={{__html: content.rendered}}/>
                         <Attractions
                             destination={title.rendered}
                             attractions={attractions}
-                            center={position} />
+                            center={position}/>
                     </div>
                     <div className="col-sm-3 pull-left">
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
-Destination.propTypes  = {
+Destination.propTypes = {
     data: ImmutablePropTypes.map.isRequired,
     attractions: ImmutablePropTypes.map.isRequired,
     fetching: PropTypes.bool.isRequired,
-}
+};

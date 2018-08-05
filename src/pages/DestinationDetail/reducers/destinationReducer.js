@@ -1,5 +1,5 @@
-import { fromJS } from 'immutable';
-import * as actionTypes  from '../contants';
+import {fromJS} from 'immutable';
+import * as actionTypes from '../contants';
 
 const initState = {
     model: {},

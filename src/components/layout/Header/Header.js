@@ -4,7 +4,6 @@ import logo from 'assets/images/logo.png';
 
 export class Header extends PureComponent {
     render() {
-        var a = 2;
         return (
             <header className="header">
                 <nav className="navbar navbar-default">

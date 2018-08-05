@@ -1,4 +1,4 @@
-export const NAME = "home";
+export const NAME = 'home';
 
 export const HOME_STATE_PATH = [NAME, 'home'];
 
