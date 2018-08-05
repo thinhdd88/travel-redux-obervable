@@ -3,12 +3,14 @@
     "es6": true,
     "node": true
   },
+
   "parserOptions": {
     "ecmaVersion": 6,
     "ecmaFeatures": {
       "jsx": true
     }
   },
+
   "rules": {
     // Possible Errors
     // "comma-dangle": [2, "never"],
