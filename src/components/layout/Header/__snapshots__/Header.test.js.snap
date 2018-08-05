@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Header />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <nav
+        className="navbar navbar-default"
+>
+        <div
+                className="container"
+        >
+                <Link
+                        className="nav-link logo"
+                        replace={false}
+                        to="/"
+                >
+                        <img
+                                alt=""
+                                src="logo.png"
+                        />
+                </Link>
+                <Link
+                        className="nav-link"
+                        replace={false}
+                        to="/test"
+                >
+                        test
+                </Link>
+        </div>
+</nav>,
+      "className": "header",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+>
+          <Link
+                    className="nav-link logo"
+                    replace={false}
+                    to="/"
+          >
+                    <img
+                              alt=""
+                              src="logo.png"
+                    />
+          </Link>
+          <Link
+                    className="nav-link"
+                    replace={false}
+                    to="/test"
+          >
+                    test
+          </Link>
+</div>,
+        "className": "navbar navbar-default",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Link
+              className="nav-link logo"
+              replace={false}
+              to="/"
+>
+              <img
+                            alt=""
+                            src="logo.png"
+              />
+</Link>,
+            <Link
+              className="nav-link"
+              replace={false}
+              to="/test"
+>
+              test
+</Link>,
+          ],
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <img
+                alt=""
+                src="logo.png"
+/>,
+              "className": "nav-link logo",
+              "replace": false,
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "",
+                "src": "logo.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "test",
+              "className": "nav-link",
+              "replace": false,
+              "to": "/test",
+            },
+            "ref": null,
+            "rendered": "test",
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      "type": "nav",
+    },
+    "type": "header",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <nav
+          className="navbar navbar-default"
+>
+          <div
+                    className="container"
+          >
+                    <Link
+                              className="nav-link logo"
+                              replace={false}
+                              to="/"
+                    >
+                              <img
+                                        alt=""
+                                        src="logo.png"
+                              />
+                    </Link>
+                    <Link
+                              className="nav-link"
+                              replace={false}
+                              to="/test"
+                    >
+                              test
+                    </Link>
+          </div>
+</nav>,
+        "className": "header",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="container"
+>
+            <Link
+                        className="nav-link logo"
+                        replace={false}
+                        to="/"
+            >
+                        <img
+                                    alt=""
+                                    src="logo.png"
+                        />
+            </Link>
+            <Link
+                        className="nav-link"
+                        replace={false}
+                        to="/test"
+            >
+                        test
+            </Link>
+</div>,
+          "className": "navbar navbar-default",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Link
+                className="nav-link logo"
+                replace={false}
+                to="/"
+>
+                <img
+                                alt=""
+                                src="logo.png"
+                />
+</Link>,
+              <Link
+                className="nav-link"
+                replace={false}
+                to="/test"
+>
+                test
+</Link>,
+            ],
+            "className": "container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <img
+                  alt=""
+                  src="logo.png"
+/>,
+                "className": "nav-link logo",
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "",
+                  "src": "logo.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "test",
+                "className": "nav-link",
+                "replace": false,
+                "to": "/test",
+              },
+              "ref": null,
+              "rendered": "test",
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": "nav",
+      },
+      "type": "header",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
