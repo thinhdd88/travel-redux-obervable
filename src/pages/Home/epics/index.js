@@ -1,6 +1,5 @@
-import Rx from 'rxjs/Rx'; // eslint-disable-line
-import {combineEpics} from 'redux-observable';
-import {ajax} from 'rxjs/observable/dom/ajax';
+import { combineEpics } from 'redux-observable';
+import { ajax } from 'rxjs/observable/dom/ajax';
 import * as actionTypes from '../contants';
 
 const getBanners = action$ =>

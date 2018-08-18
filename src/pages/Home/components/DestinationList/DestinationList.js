@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import _ from 'lodash';
@@ -12,7 +12,7 @@ const masonryOptions = {
 };
 
 export class DestinationList extends PureComponent {
-    sortData(data, sort) {
+    sortData (data, sort) {
         if (sort === 1) {
             return _.orderBy(data, (e) => {
                 return e.title.rendered;
@@ -23,10 +23,10 @@ export class DestinationList extends PureComponent {
             }, ['desc']);
         }
 
-        return _.sortBy(data, "originalIndex");
+        return _.sortBy(data, 'originalIndex');
     }
 
-    buildData(destinations, searchString, sort) {
+    buildData (destinations, searchString, sort) {
         let items = destinations ? this.sortData(destinations.toJS(), sort) : [];
         const search = searchString ? searchString.trim().toLowerCase() : '';
 
@@ -40,7 +40,7 @@ export class DestinationList extends PureComponent {
         return items;
     }
 
-    render() {
+    render () {
         const {destinations, searchString, sort} = this.props;
         const list = this.buildData(destinations, searchString, sort);
 
@@ -57,11 +57,11 @@ export class DestinationList extends PureComponent {
                     {list.map((item, index) => {
                         return (
                             <Destination key={index}
-                                image={item.acf.main_image}
-                                title={item.title.rendered}
-                                shortDescription={item.acf.short_description}
-                                url={`/destination/${item.slug}`}
-                                classNames='hover-effect item col-md-4 col-xs-6'
+                                         image={item.acf.main_image}
+                                         title={item.title.rendered}
+                                         shortDescription={item.acf.short_description}
+                                         url={`/destination/${item.slug}`}
+                                         classNames='hover-effect item col-md-4 col-xs-6'
                             />
                         );
                     })}
@@ -75,4 +75,5 @@ export class DestinationList extends PureComponent {
 DestinationList.propTypes = {
     sort: PropTypes.number,
     destinations: ImmutablePropTypes.list,
+    searchString: PropTypes.string,
 };

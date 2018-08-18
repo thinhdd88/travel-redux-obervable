@@ -1,13 +1,12 @@
 import React from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as actions from '../actions/toolbar';
-import {HOME_STATE_PATH} from '../contants';
-
+import { HOME_STATE_PATH } from '../contants';
 // Material UI
-import {orange400} from 'material-ui/styles/colors';
+import { orange400 } from 'material-ui/styles/colors';
 import SelectField from 'material-ui/SelectField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import MenuItem from 'material-ui/MenuItem';
@@ -74,15 +73,16 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);
 
+Content.propTypes = {
+    handleSort: PropTypes.func,
+    handleSearch: PropTypes.func,
+    model: ImmutablePropTypes.map,
+};
+
 const Toolbar = connect(
     mapStateToProps,
     mapDispatchToProps
 )(Content);
 
-Toolbar.propTypes = {
-    handleSort: PropTypes.func,
-    handleSearch: PropTypes.func,
-    model: ImmutablePropTypes.map,
-};
 
 export default Toolbar;

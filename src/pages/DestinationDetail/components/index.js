@@ -1,1 +1,1 @@
-export {Destination} from './Destination/Destination';
+export { Destination } from './Destination/Destination';

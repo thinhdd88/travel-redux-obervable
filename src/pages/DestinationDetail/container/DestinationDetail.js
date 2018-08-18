@@ -1,23 +1,23 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {Destination} from '../components';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Destination } from '../components';
 
 import * as actions from '../actions';
-import {DESTINATION_REDUCER, ATTRACTIONS_REDUCER} from '../contants';
+import { ATTRACTIONS_REDUCER, DESTINATION_REDUCER } from '../contants';
 import './style.css';
 
 
 class DestinationDetail extends React.Component {
-    componentDidMount() {
-        const {slug} = this.props.match.params;
+    componentDidMount () {
+        const { slug } = this.props.match.params;
         this.props.getDestinationDetail(slug);
     }
 
-    render() {
-        const {model, fetching, attractionModel} = this.props;
+    render () {
+        const { model, fetching, attractionModel } = this.props;
         return (
             <Fragment>
                 {<Destination fetching={fetching} data={model} attractions={attractionModel}/>}
@@ -39,6 +39,7 @@ DestinationDetail.propTypes = {
     attractionModel: ImmutablePropTypes.map.isRequired,
     getDestinationDetail: PropTypes.func.isRequired,
     fetching: PropTypes.bool.isRequired,
+    match: PropTypes.object.isRequired,
 };
 
 export default connect(

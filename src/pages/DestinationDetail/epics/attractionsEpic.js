@@ -1,7 +1,7 @@
 import Rx from 'rxjs/Rx';
-import {combineEpics} from 'redux-observable';
-import {ajax} from 'rxjs/observable/dom/ajax';
-import {HOST} from 'config';
+import { combineEpics } from 'redux-observable';
+import { ajax } from 'rxjs/observable/dom/ajax';
+import { HOST } from 'config';
 import * as actionTypes from '../contants';
 
 const getDestinationDetail = action$ =>

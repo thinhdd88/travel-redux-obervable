@@ -1,5 +1,5 @@
 import React from 'react';
-import {Loading} from 'components/common';
+import { Loading } from 'components/common';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import Attractions from './Attractions';
@@ -28,7 +28,7 @@ export const Destination = ({data, fetching, attractions}) => {
                 <div className="row">
                     <div className="col-sm-9 pull-right">
                         <div className="description"
-                            dangerouslySetInnerHTML={{__html: content.rendered}}/>
+                             dangerouslySetInnerHTML={{__html: content.rendered}}/>
                         <Attractions
                             destination={title.rendered}
                             attractions={attractions}

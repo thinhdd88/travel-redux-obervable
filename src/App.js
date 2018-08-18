@@ -1,19 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import createHistory from 'history/createBrowserHistory';
-import {Router, Route, Switch} from 'react-router-dom';
+import { Route, Router, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
-import {Map} from 'immutable';
+import { Map } from 'immutable';
 
-// Redux
-import {Provider} from 'react-redux';
-import {createStore, compose, applyMiddleware} from 'redux';
-import {createEpicMiddleware} from 'redux-observable';
-import {createLogger} from 'redux-logger';
+import { Provider } from 'react-redux';
+import { applyMiddleware, compose, createStore } from 'redux';
+import { createEpicMiddleware } from 'redux-observable';
+import { createLogger } from 'redux-logger';
+import { Header } from './components/layout';
+
 import rootReducer from './redux/reducers';
 import rootEpic from './redux/epics';
-
-// Content
-import {Header} from 'components/layout';
 import './App.css';
 
 // Code splitting: https://reactjs.org/docs/code-splitting.html
@@ -58,7 +56,7 @@ const store = createStore(
 );
 
 class App extends Component {
-    render() {
+    render () {
         return (
             <Provider store={store}>
                 <Router history={history}>

@@ -1,6 +1,6 @@
 import { combineEpics } from 'redux-observable';
-import {homeEpic} from 'pages/Home';
-import {destinationDetailEpic} from 'pages/DestinationDetail';
+import { homeEpic } from 'pages/Home';
+import { destinationDetailEpic } from 'pages/DestinationDetail';
 
 const rootEpic = combineEpics(
     homeEpic,
@@ -8,4 +8,3 @@ const rootEpic = combineEpics(
 );
 
 export default rootEpic;
-

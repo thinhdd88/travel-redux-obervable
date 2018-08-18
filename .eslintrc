@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "flowtype",
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+  },
+  "rules": {
+    "prefer-destructuring": 2,
+    "indent": [2, 4, {"SwitchCase": 1}],
+    "import/no-unresolved": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-indent-props": [2, 4],
+    "react/jsx-indent": [2, 4],
+    "react/destructuring-assignment": 0,
+    "react/jsx-wrap-multilines": 0,
+    "react/jsx-closing-bracket-location": [1, {selfClosing: 'after-props'}],
+    "react/jsx-tag-spacing": 0,
+    "linebreak-style": 0,
+    "space-before-function-paren": 0,
+    "comma-dangle": 0,
+    "import/prefer-default-export": 1,
+    "max-len": 0,
+    "arrow-body-style": 1,
+    "arrow-parens": ["error", "as-needed"],
+    "eol-last": 0,
+    "operator-linebreak": 0,
+  }
+}

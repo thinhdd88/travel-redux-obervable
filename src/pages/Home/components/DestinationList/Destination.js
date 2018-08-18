@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Destination = ({image, title, shortDescription, url, classNames, handleClick}) => (
     <li className={classNames} onClick={handleClick}>
@@ -16,6 +17,15 @@ const Destination = ({image, title, shortDescription, url, classNames, handleCli
         </figure>
     </li>
 );
+
+Destination.propTypes = {
+    image: PropTypes.string,
+    title: PropTypes.string,
+    shortDescription: PropTypes.string,
+    url: PropTypes.string,
+    classNames: PropTypes.string,
+    handleClick: PropTypes.func.isRequired,
+};
 
 export default Destination;
 

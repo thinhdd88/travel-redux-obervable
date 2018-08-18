@@ -1,4 +1,4 @@
-export const NAME = "destinationDetail";
+export const NAME = 'destinationDetail';
 
 export const DESTINATION_REDUCER = [NAME, 'destinationReducer'];
 export const ATTRACTIONS_REDUCER = [NAME, 'attractionsReducer'];
