@@ -1,11 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
+import Masonry from 'react-masonry-component';
 import _ from 'lodash';
 import Destination from './Destination';
 import './destinations.css';
-
-import Masonry from 'react-masonry-component';
 
 const masonryOptions = {
     transitionDuration: '0.8s'
@@ -14,11 +13,13 @@ const masonryOptions = {
 export class DestinationList extends PureComponent {
     sortData (data, sort) {
         if (sort === 1) {
-            return _.orderBy(data, (e) => {
+            return _.orderBy(data, e => {
                 return e.title.rendered;
             }, ['asc']);
-        } else if (sort === 2) {
-            return _.orderBy(data, (e) => {
+        }
+
+        if (sort === 2) {
+            return _.orderBy(data, e => {
                 return e.title.rendered;
             }, ['desc']);
         }
@@ -41,27 +42,28 @@ export class DestinationList extends PureComponent {
     }
 
     render () {
-        const {destinations, searchString, sort} = this.props;
+        const { destinations, searchString, sort } = this.props;
         const list = this.buildData(destinations, searchString, sort);
 
         return (
             <div className="container">
                 {list &&
                 <Masonry
-                    className={'list-items list-unstyled destinations-masonry row'} // default ''
-                    elementType={'ul'} // default 'div'
+                    className='list-items list-unstyled destinations-masonry row' // default ''
+                    elementType='ul' // default 'div'
                     options={masonryOptions} // default {}
                     disableImagesLoaded={false} // default false
                     updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
                 >
-                    {list.map((item, index) => {
+                    {list.map(item => {
                         return (
-                            <Destination key={index}
-                                         image={item.acf.main_image}
-                                         title={item.title.rendered}
-                                         shortDescription={item.acf.short_description}
-                                         url={`/destination/${item.slug}`}
-                                         classNames='hover-effect item col-md-4 col-xs-6'
+                            <Destination
+                                key={item.id}
+                                image={item.acf.main_image}
+                                title={item.title.rendered}
+                                shortDescription={item.acf.short_description}
+                                url={`/destination/${item.slug}`}
+                                classNames='hover-effect item col-md-4 col-xs-6'
                             />
                         );
                     })}
@@ -73,7 +75,7 @@ export class DestinationList extends PureComponent {
 }
 
 DestinationList.propTypes = {
-    sort: PropTypes.number,
-    destinations: ImmutablePropTypes.list,
-    searchString: PropTypes.string,
+    sort: PropTypes.number.isRequired,
+    destinations: ImmutablePropTypes.list.isRequired,
+    searchString: PropTypes.string.isRequired,
 };

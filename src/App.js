@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import { Route, Router, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
@@ -41,7 +41,7 @@ const logger = createLogger({
         title: () => 'green',
         nextState: () => '#4CAF50',
     },
-    stateTransformer: (state) => {
+    stateTransformer: state => {
         return state.toJS();
     }
 });
@@ -55,22 +55,20 @@ const store = createStore(
     )
 );
 
-class App extends Component {
-    render () {
-        return (
-            <Provider store={store}>
-                <Router history={history}>
-                    <React.Fragment>
-                        <Header/>
-                        <Switch>
-                            <Route exact path="/" component={Home}/>
-                            <Route path="/destination/:slug" component={DestinationDetail}/>
-                        </Switch>
-                    </React.Fragment>
-                </Router>
-            </Provider>
-        );
-    }
+function App () {
+    return (
+        <Provider store={store}>
+            <Router history={history}>
+                <React.Fragment>
+                    <Header/>
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/destination/:slug" component={DestinationDetail}/>
+                    </Switch>
+                </React.Fragment>
+            </Router>
+        </Provider>
+    );
 }
 
 export default App;

@@ -13,7 +13,7 @@ const getDestinationDetail = action$ =>
                 crossDomain: true,
                 method: 'GET'
             })
-                .flatMap(({response}) => ([{
+                .flatMap(({ response }) => ([{
                     type: actionTypes.GET_ATTRACTIONS_COMPLETE,
                     payload: {
                         detail: response
@@ -21,7 +21,7 @@ const getDestinationDetail = action$ =>
                 }]))
                 .catch(error => Rx.Observable.of({
                     type: actionTypes.GET_ATTRACTIONS_ERROR,
-                    payload: {error}
+                    payload: { error }
                 }))
         );
 

@@ -7,14 +7,14 @@ import { getAttractions } from '../actions';
 
 const getDestinationDetail = action$ =>
     action$.ofType(actionTypes.GET_DESTINATION)
-        .mergeMap((action) =>
+        .mergeMap(action =>
             ajax({
                 url: `${HOST}/destinations/?slug=${action.payload.slug}`,
                 responseType: 'json',
                 crossDomain: true,
                 method: 'GET'
             })
-                .flatMap(({response}) => ([
+                .flatMap(({ response }) => ([
                     {
                         type: actionTypes.GET_DESTINATION_COMPLETE,
                         payload: {
@@ -25,7 +25,7 @@ const getDestinationDetail = action$ =>
                 ]))
                 .catch(error => Rx.Observable.of({
                     type: actionTypes.GET_DESTINATION_ERROR,
-                    payload: {error}
+                    payload: { error }
                 }))
         );
 

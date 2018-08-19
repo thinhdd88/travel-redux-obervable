@@ -9,7 +9,7 @@ import { HOME_STATE_PATH } from '../contants';
 import './home.css';
 
 class Home extends React.Component {
-    componentDidMount() {
+    componentDidMount () {
         this.props.getBanners();
         this.props.getDestinations();
     }
@@ -43,7 +43,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 Home.propTypes = {
-    model: ImmutablePropTypes.map,
+    model: ImmutablePropTypes.map.isRequired,
     getBanners: PropTypes.func.isRequired,
     getDestinations: PropTypes.func.isRequired,
 };
@@ -52,4 +52,3 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Home);
-

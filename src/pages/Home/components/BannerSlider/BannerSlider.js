@@ -35,5 +35,5 @@ export class BannerSlider extends PureComponent {
 }
 
 BannerSlider.propTypes = {
-    items: ImmutablePropTypes.list,
+    items: ImmutablePropTypes.list.isRequired,
 };

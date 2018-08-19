@@ -36,5 +36,3 @@ Attractions.propTypes = {
 };
 
 export default Attractions;
-
-

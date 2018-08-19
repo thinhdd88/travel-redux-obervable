@@ -39,11 +39,10 @@ DestinationDetail.propTypes = {
     attractionModel: ImmutablePropTypes.map.isRequired,
     getDestinationDetail: PropTypes.func.isRequired,
     fetching: PropTypes.bool.isRequired,
-    match: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(DestinationDetail);
-
