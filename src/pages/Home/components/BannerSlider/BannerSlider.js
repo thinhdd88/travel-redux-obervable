@@ -12,7 +12,7 @@ const settings = {
     slidesToScroll: 1
 };
 
-export class BannerSlider extends PureComponent {
+export default class BannerSlider extends PureComponent {
     render () {
         const banners = this.props.items.toJS();
         return (

@@ -9,8 +9,11 @@ const Destination = ({ image, title, shortDescription, url, classNames, handleCl
             <figcaption>
                 <div>
                     <h2>{title}</h2>
-                    {shortDescription && (
-                        <p className="description" dangerouslySetInnerHTML={{ __html: shortDescription }}/>)}
+                    {shortDescription &&
+                        <p className="description" >
+                            {shortDescription}
+                        </p>
+                    }
                 </div>
                 {url && (<Link className="nav-link" to={url}>View more</Link>)}
             </figcaption>

@@ -10,18 +10,14 @@ const masonryOptions = {
     transitionDuration: '0.8s'
 };
 
-export class DestinationList extends PureComponent {
+export default class DestinationList extends PureComponent {
     sortData (data, sort) {
         if (sort === 1) {
-            return _.orderBy(data, e => {
-                return e.title.rendered;
-            }, ['asc']);
+            return _.orderBy(data, e => e.title.rendered, ['asc']);
         }
 
         if (sort === 2) {
-            return _.orderBy(data, e => {
-                return e.title.rendered;
-            }, ['desc']);
+            return _.orderBy(data, e => e.title.rendered, ['desc']);
         }
 
         return _.sortBy(data, 'originalIndex');
