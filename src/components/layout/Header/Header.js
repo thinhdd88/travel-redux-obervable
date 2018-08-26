@@ -10,9 +10,7 @@ export function Header() {
                     <Link className="nav-link logo" to="/">
                         <img alt="" src={logo}/>
                     </Link>
-                    <Link className="nav-link" to="/test">
-                        test
-                    </Link>
+                    <Link className="nav-link" to="/test"> test </Link>
                 </div>
             </nav>
         </header>

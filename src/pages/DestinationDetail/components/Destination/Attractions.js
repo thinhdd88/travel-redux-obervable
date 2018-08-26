@@ -1,13 +1,17 @@
+// @flow
 import React, { PureComponent } from 'react';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 
-class Attractions extends PureComponent {
+type Props = {
+    attractions: Object,
+};
+
+class Attractions extends PureComponent<Props> {
     render () {
         return (
             <div>
                 <ul className="list-attraction row list-unstyled">
                     {
-                        this.props.attractions.size && this.props.attractions.toJS().map(item =>
+                        this.props.attractions.size && this.props.attractions.map(item =>
                             <li key={item.id} className="col-md-2 col-xs-3 item">
                                 <div className="content">
                                     {item.acf.image &&
@@ -28,9 +32,5 @@ class Attractions extends PureComponent {
         );
     }
 }
-
-Attractions.propTypes = {
-    attractions: ImmutablePropTypes.map.isRequired,
-};
 
 export default Attractions;

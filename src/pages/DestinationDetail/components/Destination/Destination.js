@@ -1,10 +1,21 @@
+// @flow
 import React from 'react';
 import { Loading } from 'components/common';
-import PropTypes from 'prop-types';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import Attractions from './Attractions';
 
-export const Destination = ({ data, fetching, attractions }) => {
+type props = {
+    data: Object,
+    fetching: boolean,
+    attractions: Object
+}
+
+export const Destination = (Props: props) => {
+    const {
+        data,
+        fetching,
+        attractions
+    } = Props;
+
     if (fetching) return <Loading/>;
     if (!data.size) return '';
 
@@ -13,7 +24,7 @@ export const Destination = ({ data, fetching, attractions }) => {
         title,
         content,
         metadata
-    } = data.toJS();
+    } = data;
     const geocoder = metadata.martygeocoderlatlng && metadata.martygeocoderlatlng[0].slice(1, -1).split(',');
     const position = geocoder && {
         lat: parseFloat(geocoder[0]),
@@ -43,10 +54,4 @@ export const Destination = ({ data, fetching, attractions }) => {
             </div>
         </div>
     );
-};
-
-Destination.propTypes = {
-    data: ImmutablePropTypes.map.isRequired,
-    attractions: ImmutablePropTypes.map.isRequired,
-    fetching: PropTypes.bool.isRequired,
 };
