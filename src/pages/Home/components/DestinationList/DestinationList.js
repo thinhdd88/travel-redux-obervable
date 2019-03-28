@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React from 'react'; // eslint-disable-line
+import { PureComponent } from 'react'; // eslint-disable-line
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import Masonry from 'react-masonry-component';

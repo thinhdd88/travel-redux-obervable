@@ -1,5 +1,6 @@
 // @flow
 import React, { PureComponent } from 'react';
+// import PropTypes from 'prop-types';
 
 type Props = {
     attractions: Object,
@@ -7,11 +8,12 @@ type Props = {
 
 class Attractions extends PureComponent<Props> {
     render () {
+        const { attractions } = this.props;
         return (
             <div>
                 <ul className="list-attraction row list-unstyled">
                     {
-                        this.props.attractions.size && this.props.attractions.map(item =>
+                        attractions.size && attractions.map(item =>
                             <li key={item.id} className="col-md-2 col-xs-3 item">
                                 <div className="content">
                                     {item.acf.image &&

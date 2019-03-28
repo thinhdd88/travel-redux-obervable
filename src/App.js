@@ -15,16 +15,20 @@ import rootEpic from './redux/epics';
 import './App.css';
 
 // Code splitting: https://reactjs.org/docs/code-splitting.html
-// TODO: need to check other solutions
-const Loading = () => <div>Loading...</div>;
 const Home = Loadable({
     loader: () => import('pages/Home').then(m => m.Home),
-    loading: Loading,
+    loading: () => null,
 });
 
 const DestinationDetail = Loadable({
     loader: () => import('pages/DestinationDetail').then(m => m.DestinationDetail),
-    loading: Loading,
+    loading: () => null,
+});
+
+
+const HookExample1 = Loadable({
+    loader: () => import('pages/Hooks').then(m => m.Example1),
+    loading: () => null,
 });
 
 const history = createHistory();
@@ -46,14 +50,16 @@ const logger = createLogger({
     }
 });
 
+const epicMiddleware = createEpicMiddleware();
 const store = createStore(
     rootReducer,
     initialState,
     compose(
-        applyMiddleware(logger, createEpicMiddleware(rootEpic)),
+        applyMiddleware(logger, epicMiddleware),
         window.devToolsExtension ? window.devToolsExtension() : f => f
     )
 );
+epicMiddleware.run(rootEpic);
 
 function App () {
     return (
@@ -64,6 +70,7 @@ function App () {
                     <Switch>
                         <Route exact path="/" component={Home}/>
                         <Route path="/destination/:slug" component={DestinationDetail}/>
+                        <Route path="/hooks" component={HookExample1}/>
                     </Switch>
                 </React.Fragment>
             </Router>

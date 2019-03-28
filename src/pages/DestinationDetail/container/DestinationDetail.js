@@ -18,9 +18,10 @@ class DestinationDetail extends React.Component {
 
     render () {
         const { model, fetching, attractionModel } = this.props;
+
         return (
             <Fragment>
-                {<Destination fetching={fetching} data={model.toJS()} attractions={attractionModel.toJS()}/>}
+                <Destination fetching={fetching} data={model} attractions={attractionModel.toJS()} />
             </Fragment>
         );
     }

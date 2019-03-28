@@ -24,7 +24,7 @@ export const Destination = (Props: props) => {
         title,
         content,
         metadata
-    } = data;
+    } = data.toJS();
     const geocoder = metadata.martygeocoderlatlng && metadata.martygeocoderlatlng[0].slice(1, -1).split(',');
     const position = geocoder && {
         lat: parseFloat(geocoder[0]),
